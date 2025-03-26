@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+alembic
+python-dotenv
+
+passlib[bcrypt]
+python-jose[cryptography]  # Для JWT
+
+redis
+aioredis
+
+httpx  # Для тестирования (опционально)
+psycopg2-binary
+python-multipart
