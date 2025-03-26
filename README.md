@@ -62,7 +62,7 @@ POST /links/shorten
 
 ### 1. Клонирование репозитория
 ```bash
-git clone https://github.com/your-username/url-shortener.git
+git clone 
 cd url-shortener
 ```
 
@@ -90,12 +90,13 @@ alembic upgrade head
 
 ### 5. Запуск приложения
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
+### 6. Запусти redis
 
 Документация будет доступна по адресу:
 ```
-http://127.0.0.1:8000/docs
+http://0.0.0.0:8000/docs
 ```
 
 ---
@@ -114,15 +115,15 @@ http://127.0.0.1:8000/docs
 ### Таблица `links`
 Хранит сокращенные ссылки.
 
-| Поле            | Тип          | Описание                     |
-|----------------|-------------|------------------------------|
-| `id`          | `SERIAL` (PK) | Уникальный идентификатор ссылки |
-| `original_url` | `TEXT NOT NULL` | Оригинальный URL |
-| `short_code`  | `VARCHAR(20) UNIQUE NOT NULL` | Короткий код ссылки |
-| `custom_alias` | `VARCHAR(50) UNIQUE` | Пользовательский псевдоним (опционально) |
-| `created_at`  | `TIMESTAMP DEFAULT NOW()` | Дата создания |
-| `expires_at`  | `TIMESTAMP` | Дата истечения (если указана) |
-| `owner_id`    | `INTEGER` (FK) | Владелец ссылки (если зарегистрирован) |
+| Поле           | Описание                     |
+|----------------|------------------------------|
+| `id`          | Уникальный идентификатор ссылки |
+| `original_url`| Оригинальный URL |
+| `short_code`  | Короткий код ссылки |
+| `custom_alias`| Пользовательский псевдоним (опционально) |
+| `created_at`  |  Дата создания |
+| `expires_at`  | Дата истечения (если указана) |
+| `owner_id`    | Владелец ссылки (если зарегистрирован) |
 
 ### Индексы
 - `users.email` — уникальный индекс для email пользователей.
