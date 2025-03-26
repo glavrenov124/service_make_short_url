@@ -94,6 +94,9 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 ### 6. Запусти redis
 
+```bash
+redis-server
+```
 Документация будет доступна по адресу:
 ```
 http://0.0.0.0:8000/docs
