@@ -58,8 +58,8 @@ POST /links/shorten
 
 ### 1. Клонирование репозитория
 ```bash
-git clone 
-cd url-shortener
+git clone <URL>
+cd <project-directory>
 ```
 
 ### 2. Установка зависимостей
