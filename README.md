@@ -58,8 +58,8 @@ POST /links/shorten
 
 ### 1. Клонирование репозитория
 ```bash
-git clone <URL>
 cd <project-directory>
+git clone https://github.com/glavrenov124/service_make_short_url.git
 ```
 
 ### 2. Установка зависимостей
